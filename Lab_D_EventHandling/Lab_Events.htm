@@ -9,14 +9,44 @@
         {
             $("#report").append(obj + "<br>");
         }
-
+        // 文件載入完成後執行
         $(document).ready(function () {
+
+        
             // 在這裏寫程式
-            
-            
-            
-            
-            
+            $("#btnTry").click( 
+                function () { 
+                    console("btnTry clicked");  
+                }  
+            );
+            // 點擊report 將report清空並顯示Report:
+            $("#report").on(
+                "click",
+                function () { 
+                    $("#report").html("Report:<br>");  
+                }  
+            );
+            // 滑鼠移過去改變成panda2 並印出mouse enter image
+            $("#panda").on( {
+                "mouseover":
+                function () { 
+                    $("#panda").attr("src", "panda2.jpg");  
+                    console("mouse enter image");
+                },
+                // // 滑鼠移走改變成panda１ 並印出mouse leave image
+                "mouseout":
+                function () { 
+                    $("#panda").attr("src", "panda1.jpg");  
+                    console("mouse leave image");
+                }
+            });
+            // 點擊off就會將滑鼠移動到圖片的功能關掉
+            $("#btnOff").click( 
+                function () { 
+                    $("#panda").off("mouseover");
+                    $("#panda").off("mouseout");
+                }  
+            );
             
             
             

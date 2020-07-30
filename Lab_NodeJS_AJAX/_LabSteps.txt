@@ -52,7 +52,7 @@ node app.js
 
 
 2.5	如果你是使用者，會比較歡迎哪一種作法?
-
+無延遲的Ajax
 
 (Optional)
 2.6	閱讀 js/ajax_concept.js 的程式

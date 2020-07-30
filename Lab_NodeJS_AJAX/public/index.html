@@ -16,7 +16,7 @@
 
 <body>
     <div class="container">
-        <h2>AJAX Lab</h2>
+        <h2>AJAX Lab １５</h2>
         <ul class="nav nav-tabs">
             <li class="active"><a href="#conceptTab">Concept</a></li>
             <li><a href="#getTab">GET</a></li>
@@ -124,16 +124,30 @@
                 $(this).tab('show');
             });
 
+            // 綁定按鈕事件，val=value
+            //模擬延遲 點擊後 將nametextbox的值傳給who
+            //解析網址 資料窗口名稱必須設定/hello/
+            // $("#getButton").on("click", function() {
+            //     var who = $("#nameTextBox").prop("value");
+            //     var url = "/hello/" + who;
+            //     $.get(url,function(dataFromServer){
+            //         $("#reportSpan").text(dataFromServer)
+            //     }
+            //     )
 
+                
+
+            // })
             $("#getButton").on("click", function() {
                 var s = $("#nameTextBox").val();
 
+                $.get("/hello/" + s, function(e) {
+                    $("#reportSpan").text(e);
+                })
 
-
-
-
-                $("#reportSpan").text(s);
             })
+
+
 
 
 

@@ -31,3 +31,6 @@ $("#betaRibbon").css("font-family", "Arial");
 $("#betaRibbon").css({"font-family": "Arial", "font-size": "1.2em"});
 
 
+link rel href
+img src 
+a href 

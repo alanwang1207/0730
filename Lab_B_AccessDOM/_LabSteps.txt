@@ -8,33 +8,66 @@
 
 // 210:
                 $("#report").text("line1<br>Line2");
+                修改text值
 
 
 // 220:
                 $("#report").html("line1<br>Line2");
+                可視想改網頁還是文字來傳值
 
 
 // 230:
                 $("#report").append("line1<br>Line2");
+                存取id=report並且增加
 
 
 // 240:
                 var s = $("#report").text();
 				alert(s);
 				// 與 210 相較，有何差別?
+                沒東西給jquery就不會改變資料
+                沒給(read)就不會改寫(write)
 
 
 // 250
                 var s = $("#aTextField").attr("value");
                 $("#report").append(s);
+                prepend vs append 
+                    前  vs   後
 
 
 // 260
                 var s = $("#aTextField").attr("value", "Hello!");
 				// 一樣是 $.attr(), 250 與 260 差別在哪?
+                傳值與否
 
 
 // 270
                 var s = $("input[name='radioGroup']").eq(2).attr("checked", "checked");
                 $("#report").append("radio C selected.");
 				<Note> attr() 改用 prop() 代替，有何分別?
+                是否會跳轉到c，最主要是attr只能處理字串，prop可以處理所有格式
+                上面的程式是使用prop或是attr的checked屬性，屬性值也是checked
+                <input type="radio" name="radioGroup" id="radioB" value="66" checked="checked"/> B
+
+
+attr vs prop
+屬性存取,如果要改屬性內容就用逗號
+$("#aTextField").prop("value");
+
+$("#aTextField").prop("value","546")
+類用. 屬性用#
+
+text vs html
+讀出來的資料依照格式下去解析
+
+attribute表示HTML文件節點的屬性，property表示JS物件的屬性。
+<body>
+<!--div元素中的id、class、user-id就是div這個元素文件節點的attitude-->
+<!--user-id是自定義DOM屬性-->
+<div id="div1" class="class1" user-id="1"></div>
+</body>
+<script type="text/javascript">
+// 這個obj物件中的username和age就是obj這個js物件的property
+var obj = {username:"zhangsan",age:18};
+</script>
